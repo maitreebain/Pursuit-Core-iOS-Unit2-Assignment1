@@ -21,10 +21,15 @@ class ViewController: UIViewController {
     
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
         print("row \(gameButton.row) at colum \(gameButton.col) was selected.")
+        
+        
+        
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
     }
+
+    
     
     
 }
