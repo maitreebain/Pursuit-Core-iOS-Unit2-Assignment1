@@ -17,7 +17,9 @@ class TicTacToeBrain {
     
     func populate(_ gameButton: GameButton) {
         if playerOne % 2 == 0 {
-            gameMatrix[gameButton.row;gameMatrix[gameButton.col] = ["x"]// .row - //
+            gameMatrix[gameButton.row][gameButton.col] = "x"// .row - //
+        } else if playerTwo % 2 == 1 {
+            gameMatrix[gameButton.row][gameButton.col] = "o"
         }
     }
 }
