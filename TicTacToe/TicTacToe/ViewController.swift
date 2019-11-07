@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var gamePrompt: UILabel!
     @IBOutlet var gameButtons: [GameButton]!
     
     override func viewDidLoad() {
@@ -22,19 +23,26 @@ class ViewController: UIViewController {
         }
     }
     
-    var gamesWon = 0
+    var startGame = TicTacToeBrain()
+    var gameB = GameButton()
+    
     
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
-        print("row \(gameButton.row) at colum \(gameButton.col) was selected.")
-
-        if playerOne == 0 {
-        for button in gameButtons{
-            
+        if startGame.playerOne == 0 {
+            startGame.gameMatrix[gameButton.row][gameButton.col] = "x"
+            gameButton.setBackgroundImage(UIImage(named: "knifeX"), for: .normal)
+            startGame.playerOne = 1
+        } else {
+            gameButton.setBackgroundImage(UIImage(named: "pumpkinO"), for: .normal)
+            startGame.gameMatrix[gameButton.row][gameButton.col] = "o"
+            startGame.playerOne = 0
         }
-        }
+        print(startGame.gameMatrix)
+        gameButton.isEnabled = false
         
         
     }
+    
     
     
     
