@@ -10,16 +10,20 @@ import Foundation
 
 class TicTacToeBrain {
     
-    var playerOne = 3
-    var playerTwo = 2
+    var playerOne = 0
   
     var gameMatrix = [["","",""], ["","",""],["","",""]]
     
     func populate(_ gameButton: GameButton) {
-        if playerOne % 2 == 0 {
+        if playerOne == 0 {
             gameMatrix[gameButton.row][gameButton.col] = "x"// .row - //
-        } else if playerTwo % 2 == 1 {
+            gameMatrix.append(["x"])
+            playerOne = 1
+        } else {
             gameMatrix[gameButton.row][gameButton.col] = "o"
+            gameMatrix.append(["o"])
+            playerOne = 0
         }
     }
+    
 }

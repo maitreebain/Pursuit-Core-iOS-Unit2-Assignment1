@@ -13,4 +13,3 @@ class GameButton: UIButton {
   @IBInspectable var col: Int = 0
 }
 
-
