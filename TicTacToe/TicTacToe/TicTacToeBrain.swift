@@ -10,41 +10,42 @@ import Foundation
 
 class TicTacToeBrain {
     
-    var scoreOne = 0
-    var scoreTwo = 0
-    
     var playerOne = 0
   
     var gameMatrix = [["","",""], ["","",""], ["","",""]]
     
-    var ViewControl = ViewController()
     
-    func winCondition() {
+    func winCondition() -> String {
+        var scoreOne = 0
+        var scoreTwo = 0
+        var playerWin = ""
+    
+    for arr in gameMatrix {
+    if arr == ["x","x","x"] {
+        scoreOne += 1
+        print("P1 wins!")
+        playerWin = "Player One wins"
+        return playerWin
         
-        if gameMatrix.contains(["x","x","x"]) {
-            scoreOne += 1
-            ViewControl.gamePrompt.text = "Player One wins! Score: \(scoreOne)"
-        } else if gameMatrix.contains(["o","o","o"]) {
-            scoreTwo += 2
-            ViewControl.gamePrompt.text = "Player Two wins! Score: \(scoreTwo)"
+    } else if arr == ["o","o","o"] {
+        scoreTwo += 1
+        print("P2 wins")
+        playerWin = "Player Two wins"
+        return playerWin
+        }
         }
         
+        return ""
         
-        
-    }
+//        for array in gameMatrix{
+//            for (index, value) in array.enumerated(){
+//                if value
+//
+                
+                
+            }
+        }
 
     
-//    func populate(_ gameButton: GameButton) {
-//        if playerOne == 0 {
-//            gameMatrix[gameButton.row][gameButton.col] = "x"// .row - //
-//            playerOne = 1
-//        } else {
-//            gameMatrix[gameButton.row][gameButton.col] = "o"
-//            playerOne = 0
-//        }
-//        print(gameMatrix)
-//    }
     
     
-    
-}

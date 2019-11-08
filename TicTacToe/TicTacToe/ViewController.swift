@@ -27,21 +27,29 @@ class ViewController: UIViewController {
     var gameB = GameButton()
     
     
+    
     @IBAction func gameButtonPressed(_ gameButton: GameButton) {
         if startGame.playerOne == 0 {
+            gamePrompt.text = "Player One's turn!"
             startGame.gameMatrix[gameButton.row][gameButton.col] = "x"
             gameButton.setBackgroundImage(UIImage(named: "knifeX"), for: .normal)
+            
             startGame.playerOne = 1
         } else {
+            gamePrompt.text = "Player Two's turn!"
             gameButton.setBackgroundImage(UIImage(named: "pumpkinO"), for: .normal)
             startGame.gameMatrix[gameButton.row][gameButton.col] = "o"
+        
             startGame.playerOne = 0
         }
+       gamePrompt.text = startGame.winCondition()
         print(startGame.gameMatrix)
         gameButton.isEnabled = false
         
-        
-    }
+            }
+    
+    
+    
     
     
     
@@ -49,8 +57,16 @@ class ViewController: UIViewController {
     
     @IBAction func resetButton(_ sender: UIButton) {
     }
-
+    
+    
     
     
     
 }
+        
+    
+    
+
+
+    
+
