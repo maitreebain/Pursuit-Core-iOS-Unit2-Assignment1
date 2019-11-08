@@ -13,17 +13,17 @@ class TicTacToeBrain {
     var playerOne = 0
   
     var gameMatrix = [["","",""], ["","",""], ["","",""]]
-    
+ 
+    var scoreOne = 0
+    var scoreTwo = 0
+    var playerWin = ""
     
     func winCondition() -> String {
-        var scoreOne = 0
-        var scoreTwo = 0
-        var playerWin = ""
     
     for arr in gameMatrix {
     if arr == ["x","x","x"] {
         scoreOne += 1
-        print("P1 wins!")
+        print("P1 wins")
         playerWin = "Player One wins"
         return playerWin
         
@@ -34,18 +34,39 @@ class TicTacToeBrain {
         return playerWin
         }
         }
-        
-        return ""
-        
-//        for array in gameMatrix{
-//            for (index, value) in array.enumerated(){
-//                if value
-//
-                
-                
-            }
-        }
 
+                return ""
+}
+
+    func diagonalWinCondition(_ x: String) -> Bool{
+        var count = 0
+        
+    for (arrIndex, arrValue) in gameMatrix.enumerated(){
+        for (index, value) in arrValue.enumerated(){
+            if arrIndex == index {
+                if value == x {
+                    count += 1
+                }
+            }
+}
+}
+
+        var diagNum = 0
+        for value in 0..<gameMatrix.count{
+            diagNum = gameMatrix[value].count - 1
+            gameMatrix[value][diagNum - value]
+            count += 1
+        }
+        
+        if count == 3{
+            return true
+        }
+    
+    return false
+}
     
     
     
+}
+//}
+//}

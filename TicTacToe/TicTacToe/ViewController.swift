@@ -33,7 +33,8 @@ class ViewController: UIViewController {
             gamePrompt.text = "Player One's turn!"
             startGame.gameMatrix[gameButton.row][gameButton.col] = "x"
             gameButton.setBackgroundImage(UIImage(named: "knifeX"), for: .normal)
-            
+            if startGame.diagonalWinCondition("x") {
+            }
             startGame.playerOne = 1
         } else {
             gamePrompt.text = "Player Two's turn!"
@@ -42,7 +43,8 @@ class ViewController: UIViewController {
         
             startGame.playerOne = 0
         }
-       gamePrompt.text = startGame.winCondition()
+        gamePrompt.text = startGame.winCondition()
+        gamePrompt.text = startGame.diagonalWinCondition()
         print(startGame.gameMatrix)
         gameButton.isEnabled = false
         
