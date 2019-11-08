@@ -50,12 +50,18 @@ class TicTacToeBrain {
             }
 }
 }
-
+        if count == 3{
+            return true
+        }
+        count = 0
+        
         var diagNum = 0
         for value in 0..<gameMatrix.count{
             diagNum = gameMatrix[value].count - 1
-            gameMatrix[value][diagNum - value]
-            count += 1
+            if gameMatrix[value][diagNum - value] == x {
+                count += 1
+            }
+
         }
         
         if count == 3{
