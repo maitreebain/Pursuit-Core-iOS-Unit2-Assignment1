@@ -38,21 +38,28 @@ class TicTacToeBrain {
                 return ""
 }
 
-    func diagonalWinCondition(_ x: String) -> Bool{
+    func diagonalWinCondition(_ x: String, _ o: String) -> String{
         var count = 0
+        
         
     for (arrIndex, arrValue) in gameMatrix.enumerated(){
         for (index, value) in arrValue.enumerated(){
             if arrIndex == index {
                 if value == x {
                     count += 1
+                } else if value == o {
+                    count += 1
+                    
                 }
+            }
+            if count == 3{
+                return "Player \(value) won"
             }
 }
 }
-        if count == 3{
-            return true
-        }
+//        if count == 3{
+//            return " won"
+//        }
         count = 0
         
         var diagNum = 0
@@ -60,15 +67,21 @@ class TicTacToeBrain {
             diagNum = gameMatrix[value].count - 1
             if gameMatrix[value][diagNum - value] == x {
                 count += 1
+                if count == 3{
+                    return "Player \(x) won"
+                }
+            } else if gameMatrix[value][diagNum - value] == o {
+                count += 1
+                if count == 3{
+                    return "Player \(o) won"
+                }
             }
+            
+
 
         }
-        
-        if count == 3{
-            return true
-        }
-    
-    return false
+            
+    return "keep playing" // error
 }
     
     
