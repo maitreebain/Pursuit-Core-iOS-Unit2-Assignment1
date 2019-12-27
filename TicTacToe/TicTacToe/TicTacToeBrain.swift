@@ -18,25 +18,37 @@ class TicTacToeBrain {
     var scoreTwo = 0
     var playerWin = ""
     
-    func winCondition() -> String {
+//    func winCondition() -> String {
+//
+//    for arr in gameMatrix {
+//    if arr == ["x","x","x"] {
+//        scoreOne += 1
+//        print("P1 wins")
+//        playerWin = "Player One wins"
+//        return playerWin
+//
+//    } else if arr == ["o","o","o"] {
+//        scoreTwo += 1
+//        print("P2 wins")
+//        playerWin = "Player Two wins"
+//        return playerWin
+//        }
+//        }
+//
+//                return ""
+//}
     
-    for arr in gameMatrix {
-    if arr == ["x","x","x"] {
-        scoreOne += 1
-        print("P1 wins")
-        playerWin = "Player One wins"
-        return playerWin
+    func winCondition() -> String {
         
-    } else if arr == ["o","o","o"] {
-        scoreTwo += 1
-        print("P2 wins")
-        playerWin = "Player Two wins"
-        return playerWin
+        for sections in gameMatrix {
+            for (index, value) in sections.enumerated() {
+                
+            }
         }
-        }
-
-                return ""
-}
+        
+        
+    }
+    
 
     func diagonalWinCondition(_ x: String, _ o: String) -> String{
         var count = 0
