@@ -39,8 +39,8 @@ class ViewController: UIViewController {
             
             startGame.playerOne = 0
         }
-        gamePrompt.text = startGame.winCondition()
-        gamePrompt.text = startGame.diagonalWinCondition("x", "o")
+        gamePrompt.text = startGame.winCondition("x", "o")
+        print(gamePrompt.text ?? "bleep")
         print(startGame.gameMatrix)
         
             }
